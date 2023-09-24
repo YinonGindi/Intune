@@ -1,4 +1,4 @@
-﻿$script:LapsUser = "secops"
+﻿$script:LapsUser = "YinonG"
 $script:localUsers=(Get-LocalUser | where {$_.Enabled -eq $true -and $_.Name -ne $script:LapsUser}).Name
 if($script:localUsers){
   Write-Host "Unauthorized local users enabled!" 

@@ -1,0 +1,10 @@
+﻿$script:LapsUser = "secops"
+$script:localUsers=(Get-LocalUser | where {$_.Enabled -eq $true -and $_.Name -ne $script:LapsUser}).Name
+if($script:localUsers){
+  Write-Host "Unauthorized local users enabled!" 
+  Exit 0
+} 
+Else{
+  Write-Host "No unauthorized local users detected!"
+  Exit 1
+}
